@@ -1,0 +1,34 @@
+print("Welcome to the Hogwarts Bank for Wizards")
+restart = "Y"
+chances =3
+balance = 45.23
+while chances>=0:
+    pin = int(input("Please enter your pin number : "))
+    if pin == 1234:
+        print("Pin entered successfully. Happy banking.!!")
+        while restart not in ["n","NO","no","N"]:
+            print("Press 1 to display your bank bakance")
+            print("Press 2   to withdraw cash from your account")
+            print("Press 3 to deposit cash into your account")
+            print("Press 4 to exit")
+            option = int(input("How can I help you? Please enter your preferred option now : "))
+            if option == 1:
+                print("Your current account balamce is ", balance)
+                restart =  input("Would you like to back to main menu or quit ?")
+                if restart in ["n","NO","no","n"]:
+                    print("Thank you for using Servies of Hogwarts Bank for Wizards.")
+                    break
+            elif option ==2:
+                withdraw = float(input("Please enter the amount you want to withdraw. Please enter in the denomination of $10 , $20, $40, $100 : "))
+                balance = balance - withdraw
+            elif option == 3:
+                deposit = float(input("Please enter the amount you want to deposit."))
+                balance = balance + deposit
+            elif option == 4:
+                break
+    else:
+        print("Incorrect Pin")
+        chances=chances-1
+        if chances ==0:
+            print("Exceeded number of tries")
+            break
