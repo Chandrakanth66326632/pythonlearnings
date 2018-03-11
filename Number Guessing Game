@@ -1,0 +1,38 @@
+
+#The code level is very basic. Please dont judge by code. This was just a learning try. Will be modified in time.
+#Author : Chandrakanth Chary Kolanpaka.
+import random
+n =3
+to_be_guessed = int(n*random.random())+1
+print("Welcome to the guessing game. You need to guess a number a between 1 to 3 and it will be checked with the computer chosen number. If you guess it right, you win it.")
+name = input("Lets begin. Please enter your name: ")
+guess = int(input("Enter the number you are guessing ? "))
+count = 0
+if guess > 3 or guess < 1:
+    print("Dont try to fool me. You were supposed to number between 1 and 3.")
+else:
+    while True:
+        if guess == to_be_guessed:
+            print("Congratulations.!!, You guessed it right", to_be_guessed)
+        else:
+            print("Oops.!! It was wrong guess.")
+            guess= int(input("Try your luck  again by entering another number ? "))
+            if guess > 0 and guess == to_be_guessed:
+                count= count+1
+                print("Congrats, you win it.")
+                break
+            else:
+                guess = int(input("Try your luck again. Remember this is your final chance."))
+                count= count+1
+                if guess == to_be_guessed:
+                    print("You got it this time.")
+                else:
+                    print("Sorry ",name," you used all your lives. The correct answer was ", to_be_guessed)
+                    break
+        if count ==3:
+            print("Sorry ",name," you used all your lives. The correct answer was ", to_be_guessed )
+
+
+
+
+
